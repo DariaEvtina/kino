@@ -1,0 +1,7 @@
+C:\Users\opilane\source\repos\DariaEvtina\ulesane_tikets\ulesane_tikets\bin\Debug\ulesane_tikets.exe.config
+C:\Users\opilane\source\repos\DariaEvtina\ulesane_tikets\ulesane_tikets\bin\Debug\ulesane_tikets.exe
+C:\Users\opilane\source\repos\DariaEvtina\ulesane_tikets\ulesane_tikets\bin\Debug\ulesane_tikets.pdb
+C:\Users\opilane\source\repos\DariaEvtina\ulesane_tikets\ulesane_tikets\obj\Debug\ulesane_tikets.csprojAssemblyReference.cache
+C:\Users\opilane\source\repos\DariaEvtina\ulesane_tikets\ulesane_tikets\obj\Debug\ulesane_tikets.csproj.CoreCompileInputs.cache
+C:\Users\opilane\source\repos\DariaEvtina\ulesane_tikets\ulesane_tikets\obj\Debug\ulesane_tikets.exe
+C:\Users\opilane\source\repos\DariaEvtina\ulesane_tikets\ulesane_tikets\obj\Debug\ulesane_tikets.pdb

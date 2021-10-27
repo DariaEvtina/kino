@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ulesane_tikets", "ulesane_tikets\ulesane_tikets.csproj", "{DCD563DD-853C-4F22-9313-48447437F66D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCD563DD-853C-4F22-9313-48447437F66D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD563DD-853C-4F22-9313-48447437F66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD563DD-853C-4F22-9313-48447437F66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD563DD-853C-4F22-9313-48447437F66D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B6EBC6C-2FA1-44AC-B915-D04DD9408211}
+	EndGlobalSection
+EndGlobal
