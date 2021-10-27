@@ -137,19 +137,17 @@ namespace ulesane_tikets
                 {
                     int koh = 0;
                     Console.WriteLine("Mitu piletid tahu osta?");//спрашивает кол-во билетов, которые  пользователь желает купить
-                    int kogus = int.Parse(Console.ReadLine());//считывание ответа пользователя
-                    for (int i = 0; i < kogus; i++)//цикл который будет повторятся,столько раз, сколко пользователь хочет купить
+                    int kogus = int.Parse(Console.ReadLine());//считывание ответа пользовател
+                    bool muk=false;
+                    while(muk!=true)
                     {
-                        if (Muuk_Ise()==true)
+                        for (int i = 0; i < (kogus-1)*(read-1); i++)//цикл который будет повторятся,столько раз, сколко пользователь хочет купить
                         {
-                            koh++;
+                            if (koh==kogus){break;}
+                            if (muk==true){koh++;}
                         }
-                        if (koh==kogus)
-                        {
-                            break;
-                        }
-                        
                     }
+                    
                 }
                 else
                 {
