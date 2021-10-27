@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,17 +36,25 @@ namespace ulesane_tikets
                 }
             }
         }
-        static void Muuk_Ise()//покупка одного билета
+        static bool Muuk_Ise()//покупка одного билета
         {
+            bool t = false;
             Console.WriteLine("rida:");//ряд
             int pileti_rida = int.Parse(Console.ReadLine());
             Console.WriteLine("koht:");//местo
             int pileti_koht = int.Parse(Console.ReadLine());
-            if (saal[pileti_rida,pileti_koht]==0)
+            if (saal[pileti_rida, pileti_koht] == 0)
             {
+                t = true;
                 Console.WriteLine("koht {0} on vaba", pileti_koht);
                 saal[pileti_rida, pileti_koht] = 1;//изменение статуса места после покупки/брони билета
             }
+            else 
+            {
+                t = false;
+                Console.WriteLine("koht {0} on kinnetu", pileti_koht);
+            }
+            return t;
         }
         static void Saal_ekraanile()//экран зала
         {
@@ -74,47 +82,47 @@ namespace ulesane_tikets
         }
         static bool Muuk()//покупка нескольких билетов
         {
-                Console.WriteLine("Rida:");//выбор ряда и кол-во  билетов
-                int pileti_rida = int.Parse(Console.ReadLine());
-                Console.WriteLine("Mitu piletid:");
-                mitu = int.Parse(Console.ReadLine());
-                ost = new int[mitu];
-                int p = (kohad - mitu) / 2;//половина общих мест с вычитом введенных билетов пользователем(возможные месте для брони/покупки)
-                bool t = false;//элемент с логическим типом данных для проверки купили ли билет или нет
-                int k = 0;//счетчик 
-                do
+            Console.WriteLine("Rida:");//выбор ряда и кол-во  билетов
+            int pileti_rida = int.Parse(Console.ReadLine());
+            Console.WriteLine("Mitu piletid:");
+            mitu = int.Parse(Console.ReadLine());
+            ost = new int[mitu];
+            int p = (kohad - mitu) / 2;//половина общих мест с вычитом введенных билетов пользователем(возможные месте для брони/покупки)
+            bool t = false;//элемент с логическим типом данных для проверки купили ли билет или нет
+            int k = 0;//счетчик 
+            do
+            {
+                if (saal[pileti_rida, p] == 0)//
                 {
-                    if (saal[pileti_rida, p] == 0)//
-                    {
-                        ost[k] = p;
-                        Console.WriteLine("koht {0} on vaba", p);//если место свободно, выводим на экран информацию об этом пользователю и t равно true
-                        t = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("koht {0} on kinni", p);//если место занято, выводим на экран информацию об этом пользователю и t равно false(также обнуляем счетчик и возращяем p(возможные места?) к исходному значению
-                        t = false;
-                        ost = new int[mitu];//места в ряду
-                        k = 0;
-                        p = (kohad - mitu) / 2;
-                        break;
-                    }
-                    p = p + 1;
-                    k++;
-                } while (mitu != k);
-                if (t == true)
-                {
-                    Console.WriteLine("Sinu kohad on:");
-                    foreach (var koh in ost)//выведение на экран свободного места, которое забронировали
-                {
-                        Console.WriteLine("{0}\n", koh);
-                    }
+                    ost[k] = p;
+                    Console.WriteLine("koht {0} on vaba", p);//если место свободно, выводим на экран информацию об этом пользователю и t равно true
+                    t = true;
                 }
                 else
                 {
-                    Console.WriteLine("Selles reas ei ole vabu kohti. Kas tahad teises reas otsida?");
+                    Console.WriteLine("koht {0} on kinni", p);//если место занято, выводим на экран информацию об этом пользователю и t равно false(также обнуляем счетчик и возращяем p(возможные места?) к исходному значению
+                    t = false;
+                    ost = new int[mitu];//места в ряду
+                    k = 0;
+                    p = (kohad - mitu) / 2;
+                    break;
                 }
-                return t;
+                p = p + 1;
+                k++;
+            } while (mitu != k);
+            if (t == true)
+            {
+                Console.WriteLine("Sinu kohad on:");
+                foreach (var koh in ost)//выведение на экран свободного места, которое забронировали
+                {
+                    Console.WriteLine("{0}\n", koh);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Selles reas ei ole vabu kohti. Kas tahad teises reas otsida?");
+            }
+            return t;
         }
         static void Main(string[] args)
         {
@@ -129,21 +137,22 @@ namespace ulesane_tikets
                 {
                     Console.WriteLine("Mitu piletid tahu osta?");//спрашивает кол-во билетов, которые  пользователь желает купить
                     int kogus = int.Parse(Console.ReadLine());//считывание ответа пользователя
-                    for(int i=0;i<kogus;i++)//цикл который будет повторятся,столько раз, сколко пользователь хочет купить
+                    bool muuk_1 = false;
+                    while (muuk_1 != true)//цикл который будет повторятся,столько раз, сколко пользователь хочет купить
                     {
-                       Muuk_Ise();
+                        muuk_1=Muuk_Ise();
                     }
                 }
                 else
                 {
                     bool muuk = false;
-                    while (muuk!=true)//цикл который будет повторяться до того момента когда мы сможем купить билет
+                    while (muuk != true)//цикл который будет повторяться до того момента когда мы сможем купить билет
                     {
-                        muuk=Muuk();
+                        muuk = Muuk();
                     }
-                    
+
                 }
-                
+
 
             }
 
