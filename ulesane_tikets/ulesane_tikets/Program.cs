@@ -94,7 +94,7 @@ namespace ulesane_tikets
                     {
                         Console.WriteLine("koht {0} on kinni", p);//если место занято, выводим на экран информацию об этом пользователю и t равно false(также обнуляем счетчик и возращяем p(возможные места?) к исходному значению
                         t = false;
-                        ost = new int[mitu];
+                        ost = new int[mitu];//места в ряду
                         k = 0;
                         p = (kohad - mitu) / 2;
                         break;
@@ -122,7 +122,7 @@ namespace ulesane_tikets
             Saali_taitmine(suurus);
             while (true)
             {
-                Saal_ekraanile();
+                Saal_ekraanile();//выведение зала на экран
                 Console.WriteLine("1-Ise valik 2- masina valik");
                 int valik = int.Parse(Console.ReadLine());
                 if (valik == 1)
