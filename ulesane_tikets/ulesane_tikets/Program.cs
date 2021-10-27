@@ -38,23 +38,23 @@ namespace ulesane_tikets
         }
         static bool Muuk_Ise()//покупка одного билета
         {
-            bool t = false;
             Console.WriteLine("rida:");//ряд
             int pileti_rida = int.Parse(Console.ReadLine());
             Console.WriteLine("koht:");//местo
             int pileti_koht = int.Parse(Console.ReadLine());
             if (saal[pileti_rida, pileti_koht] == 0)
             {
-                t = true;
+                
                 Console.WriteLine("koht {0} on vaba", pileti_koht);
                 saal[pileti_rida, pileti_koht] = 1;//изменение статуса места после покупки/брони билета
+                return true;
             }
             else 
             {
-                t = false;
                 Console.WriteLine("koht {0} on kinnetu", pileti_koht);
+                return false;
             }
-            return t;
+
         }
         static void Saal_ekraanile()//экран зала
         {
@@ -135,12 +135,20 @@ namespace ulesane_tikets
                 int valik = int.Parse(Console.ReadLine());
                 if (valik == 1)
                 {
+                    int koh = 0;
                     Console.WriteLine("Mitu piletid tahu osta?");//спрашивает кол-во билетов, которые  пользователь желает купить
                     int kogus = int.Parse(Console.ReadLine());//считывание ответа пользователя
-                    bool muuk_1 = false;
-                    while (muuk_1 != true)//цикл который будет повторятся,столько раз, сколко пользователь хочет купить
+                    for (int i = 0; i < kogus; i++)//цикл который будет повторятся,столько раз, сколко пользователь хочет купить
                     {
-                        muuk_1=Muuk_Ise();
+                        if (Muuk_Ise()==true)
+                        {
+                            koh++;
+                        }
+                        if (koh==kogus)
+                        {
+                            break;
+                        }
+                        
                     }
                 }
                 else
