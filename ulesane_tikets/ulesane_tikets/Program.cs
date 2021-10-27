@@ -118,8 +118,8 @@ namespace ulesane_tikets
         }
         static void Main(string[] args)
         {
-            int suurus = Saali_suurus();
-            Saali_taitmine(suurus);
+            int suurus = Saali_suurus();//размер зала
+            Saali_taitmine(suurus);//заполнение массива мест, рядов 
             while (true)
             {
                 Saal_ekraanile();//выведение зала на экран
