@@ -15,7 +15,7 @@ namespace ulesane_tikets
             return suurus;//возращение значения suurus
 
         }
-        static int[,] saal = new int[,] { };
+        static int[,] saal = new int[,] { };//пустой двумерный массив
         static int[] ost = new int[] { };//ost числовой массив, который используеться в функции Muuk заполняя массив количеством билетов, запрошенных пользователем
         static int kohad, read, mitu, mitu_veel;//места,ряды,кол-во билетов 
         static void Saali_taitmine(int suurus)//создание зала по выбраному размеру
