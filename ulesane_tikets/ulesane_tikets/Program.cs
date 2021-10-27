@@ -127,7 +127,12 @@ namespace ulesane_tikets
                 int valik = int.Parse(Console.ReadLine());
                 if (valik == 1)
                 {
-                    Muuk_Ise();
+                    Console.WriteLine("Mitu piletid tahu osta?");//спрашивает кол-во билетов, которые  пользователь желает купить
+                    int kogus = int.Parse(Console.ReadLine());//считывание ответа пользователя
+                    for(int i=0;i<kogus;i++)//цикл который будет повторятся,столько раз, сколко пользователь хочет купить
+                    {
+                       Muuk_Ise();
+                    }
                 }
                 else
                 {
